@@ -13,7 +13,8 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-websocket'
 	implementation 'org.springframework.kafka:spring-kafka'
 	implementation group: 'org.slf4j', name: 'slf4j-nop', version: '2.0.3'
     implementation group: 'org.apache.kafka', name: 'kafka-clients', version: '3.3.1'
