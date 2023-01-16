@@ -7,8 +7,8 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Component;
 
-@Service
-public class MessageListener<T> {
+@Component
+public class MessageListener {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
