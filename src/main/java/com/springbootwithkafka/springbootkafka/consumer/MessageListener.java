@@ -18,6 +18,6 @@ public class MessageListener {
     @KafkaListener(topics = "poems", containerFactory = "kafkaListenerStringFactory", groupId = "consumer_1")
     public void consumeMessage(String message) {
         logger.info("**** -> Consumed message -> {}", message);
-        template.convertAndSend("/poems/consumer_1", message);
+        template.convertAndSend("/topic/group", message);
     }
 }
