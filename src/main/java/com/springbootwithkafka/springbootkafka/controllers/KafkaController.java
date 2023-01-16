@@ -27,14 +27,14 @@ public class KafkaController {
     //    -------------- WebSocket API ----------------
     @MessageMapping("/sendMessage")
     @SendTo("/poems/consumer_1")
-    public Message broadcastGroupMessage(@Payload String message) {
+    public String broadcastGroupMessage(@Payload String message) {
         //Sending this message to all the subscribers
         return message;
     }
 
     @MessageMapping("/newUser")
     @SendTo("/poems/consumer_1")
-    public Message addUser(@Payload String message,
+    public String addUser(@Payload String message,
                            SimpMessageHeaderAccessor headerAccessor) {
         // Add user in web socket session
         headerAccessor.getSessionAttributes().put("username", message.getSender());
